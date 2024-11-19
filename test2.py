@@ -166,7 +166,6 @@ class MainGame:
             homes = [[random.randint(0, 2), random.randint(0, 2)], [random.randint(0, 2), random.randint(0, 2)]]
             size = 3    
        
-       
         game_map = Map(size, stones, homes)
         game_map.set_map()
         who_play=input("who play:")
@@ -276,12 +275,6 @@ class MainGame:
                      pqueue.put((cost, child_node))  
              visited.add(current_node.game_map)  
      print("Solution not found")
-
- 
-
-
-  
-
   
 
     def get_parent_of_node(self, node):
@@ -294,13 +287,10 @@ class MainGame:
              if move_description:
                  move_description += " and "
              move_description += f" negative  ({current_map.negative.x}, {current_map.negative.y})"
-        
-      
          if current_map.positive:
              if move_description:
                   move_description += " and "
-             move_description += f" positive  ({current_map.positive.x}, {current_map.positive.y})"
-        
+             move_description += f" positive  ({current_map.positive.x}, {current_map.positive.y})"     
          if move_description:
              path.append(move_description)
          node = node.parent
